@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Enter US City</string>
+    <string name="loading">loading</string>
+    <string name="city_description">%1$s, Geo coords[%2$s, %3$s]</string>
+    <string name="fahrenheit">\u2109</string>
+    <string name="search_query_empty_error_message">Please enter a value</string>
+</resources>
