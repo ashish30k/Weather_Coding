@@ -109,6 +109,7 @@ public class HomeFragment extends Fragment implements Constants {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            ((HomeActivity) getActivity()).hideKeyboard(getView());
             mProgressDialog = ProgressDialog.show(getContext(), "",
                     getString(R.string.loading), true);
             mProgressDialog.setCancelable(false);

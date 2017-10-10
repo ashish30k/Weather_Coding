@@ -1,9 +1,9 @@
 package com.example.ashishkumar.weather;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -21,11 +21,13 @@ public class HomeActivity extends AppCompatActivity {
 
     //to hide the keyboard
     public void hideKeyboard(View view) {
-        try {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
-        } catch (Exception e) {
-            // simply catching the exception in case there is no keyboard to hide
+        if (view != null) {
+            try {
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+            } catch (Exception e) {
+                // simply catching the exception in case there is no keyboard to hide
+            }
         }
 
     }
