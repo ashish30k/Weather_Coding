@@ -86,7 +86,8 @@ public class HomeFragment extends Fragment implements Constants {
         return mSearchEditText.getText().toString();
     }
 
-    //save the searched city inside shared preferences
+    // Save the searched city inside shared preferences
+    // Given the time i could have saved simple data into local database and image into cache to avoid the service call to show last result
     private void saveSearchedCity(String city) {
         SharedPreferences sharedPreferences = getContext().getSharedPreferences(SHARED_PREF_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -103,6 +104,8 @@ public class HomeFragment extends Fragment implements Constants {
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
 
+    // Given the app i could have set up proper Modal View Presenter approach with RxAndroid to move service call into separate layer(Interactor) and
+    // set the data into view using Presenter.
     private class WeatherSearchAsyncTask extends AsyncTask<String, String, SearchResultResponse> {
         private String errorMessage;
 
